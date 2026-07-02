@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Bcrypt Hash Tool",
+  "description": "Generate bcrypt hashes and verify text against existing bcrypt hashes.",
+  "version": "1.0.0",
+  "action": {
+    "default_title": "Bcrypt Hash Tool",
+    "default_popup": "popup.html"
+  }
+}

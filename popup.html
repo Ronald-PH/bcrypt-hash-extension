@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bcrypt Hash Tool</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="header">
+        <div>
+          <h1>Bcrypt Hash Tool</h1>
+          <p>Hash text and verify it against a bcrypt hash.</p>
+        </div>
+      </header>
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+
+      <section class="panel" aria-labelledby="hash-title">
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+
+        <h2 id="hash-title">Create Hash</h2>
+        <label for="plainText">Text</label>
+        <textarea id="plainText" rows="4" spellcheck="false" placeholder="Enter text to hash"></textarea>
+
+        <div class="row">
+          <label for="rounds">Cost</label>
+          <output id="roundsValue" for="rounds">10</output>
+        </div>
+        <input id="rounds" type="range" min="4" max="14" value="10">
+
+        <button id="hashButton" type="button">Generate Hash</button>
+
+        <label for="hashOutput">Bcrypt hash</label>
+        <textarea id="hashOutput" rows="4" readonly spellcheck="false" placeholder="$2b$..."></textarea>
+        <button id="copyHashButton" class="secondary" type="button">Copy Hash</button>
+      </section>
+
+      <section class="panel" aria-labelledby="verify-title">
+        <h2 id="verify-title">Verify Hash</h2>
+        <label for="verifyText">Text</label>
+        <textarea id="verifyText" rows="3" spellcheck="false" placeholder="Enter text to check"></textarea>
+
+        <label for="verifyHash">Bcrypt hash</label>
+        <textarea id="verifyHash" rows="3" spellcheck="false" placeholder="Paste bcrypt hash"></textarea>
+
+        <button id="verifyButton" type="button">Verify Match</button>
+        <div id="verifyResult" class="result" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="github-link-title">
+        <h2 id="github-link-title">Source Code</h2>
+        <p>
+          This extension is open source. You can find the code on
+          <a href="https://github.com/Ronald-PH/bcrypt-hash-extension" target="_blank" rel="noopener noreferrer">GitHub</a>
+        
+      </section>
+    </main>
+
+    <script src="vendor/bcrypt.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
